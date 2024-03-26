@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinkedList2", "LinkedList2\LinkedList2.csproj", "{F276A18C-D73B-4B0E-AF24-3A47CC63A7A7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibLinkedList2", "LibLinkedList2\LibLinkedList2.csproj", "{039D34E0-0A87-42E2-8B84-6A4A4CF5B2EA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F276A18C-D73B-4B0E-AF24-3A47CC63A7A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F276A18C-D73B-4B0E-AF24-3A47CC63A7A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F276A18C-D73B-4B0E-AF24-3A47CC63A7A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F276A18C-D73B-4B0E-AF24-3A47CC63A7A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{039D34E0-0A87-42E2-8B84-6A4A4CF5B2EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{039D34E0-0A87-42E2-8B84-6A4A4CF5B2EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{039D34E0-0A87-42E2-8B84-6A4A4CF5B2EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{039D34E0-0A87-42E2-8B84-6A4A4CF5B2EA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
