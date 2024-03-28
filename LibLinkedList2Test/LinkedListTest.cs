@@ -1,4 +1,3 @@
-using System.Diagnostics;
 using LibLinkedList2;
 
 namespace LibLinkedList2Test;
