@@ -12,11 +12,11 @@ public class Node
     }
 }
 
-public class LinkedList
+public class SimpleLinkedList
 {
     public Node? Head { get; set; }
 
-    public LinkedList()
+    public SimpleLinkedList()
     {
         Head = null;
     }

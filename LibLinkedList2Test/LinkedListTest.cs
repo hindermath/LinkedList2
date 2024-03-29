@@ -12,7 +12,7 @@ public class LinkedListTest
     public void LinkedListSingleNodeTestMethod(int value)
     {
         // Arrange
-        LinkedList list = new LinkedList();
+        SimpleLinkedList list = new SimpleLinkedList();
         // Act
         list.AddNode(value);
         // Assert
@@ -25,7 +25,7 @@ public class LinkedListTest
     public void LinkedListMultipleNodesTestMethod(int value1, int value2, int value3)
     {
         // Arrange
-        LinkedList list = new LinkedList();
+        SimpleLinkedList list = new SimpleLinkedList();
         // Act
         list.AddNode(value1);
         list.AddNode(value2);

@@ -1,7 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using LibLinkedList2;
 
-LinkedList list = new LinkedList();
+SimpleLinkedList list = new SimpleLinkedList();
 GenLinkedList<int> genListInt = new GenLinkedList<int>();
 GenLinkedList<string> genListStr = new GenLinkedList<string>();
 
