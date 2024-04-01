@@ -49,12 +49,7 @@ public class GenLinkedListTest
     [DataRow(3)]
     public void GenLinkedListIntSingleNodeTestMethod(int value)
     {
-        // Arrange
-        GenLinkedList<int> genListInt = new GenLinkedList<int>();
-        // Act
-        genListInt.AddNode(value);
-        // Assert
-        if (genListInt.Head != null) Assert.AreEqual(value, genListInt.Head.Value);
+        SingleNodeTestMethod<int>(value);
     }
     [TestMethod]
     [DataRow(1, 2, 3)]
@@ -62,45 +57,16 @@ public class GenLinkedListTest
     [DataRow(7, 8, 9)]
     public void GenLinkedListIntMultipleNodesTestMethod(int value1, int value2, int value3)
     {
-        // Arrange
-        GenLinkedList<int> genListInt = new GenLinkedList<int>();
-        // Act
-        genListInt.AddNode(value1);
-        genListInt.AddNode(value2);
-        genListInt.AddNode(value3);
-        // Assert
-        if (genListInt.Head != null)
-        {
-            Assert.AreEqual(value1, genListInt.Head.Value);
-            Assert.AreEqual(value2, genListInt.Head.Next.Value);
-            Assert.AreEqual(value3, genListInt.Head.Next.Next.Value);
-        }
+        MultipleNodesTestMethod<int>(value1, value2, value3);
     }
 
     [TestMethod]
     [DataRow(new double[] {1, 2, 3})]
     [DataRow(new double[] {4, 5, 6})]
     [DataRow(new double[] {7, 8, 9})]
-    public void GenLinkedListIntArrayMultipleNodesTestMethod(double[] values)
+    public void GenLinkedListDblArrayMultipleNodesTestMethod(double[] values)
     {
-        // Arrange
-        GenLinkedList<double> genListDbl = new GenLinkedList<double>();
-        // Act
-        foreach (double value in values)
-        {
-            genListDbl.AddNode(value);
-        }
-        // Assert
-        if (genListDbl.Head != null)
-        {
-            Node<double> current = genListDbl.Head;
-
-            foreach (var value in values)
-            {
-                Assert.AreEqual(value, current.Value);
-                current = current.Next;
-            }
-        }
+        ArrayMultipleNodesTestMethod<double>(values);
     }
 
     [TestMethod]
@@ -109,12 +75,7 @@ public class GenLinkedListTest
     [DataRow("three")]
     public void GenLinkedListStringMultipleNodesTestMethod(string value)
     {
-        // Arrange
-        GenLinkedList<string> genListStr = new GenLinkedList<string>();
-        // Act
-        genListStr.AddNode(value);
-        // Assert
-        if (genListStr.Head != null) Assert.AreEqual(value, genListStr.Head.Value);
+        SingleNodeTestMethod<string>(value);
     }
     [TestMethod]
     [DataRow("one", "two", "three")]
@@ -122,18 +83,55 @@ public class GenLinkedListTest
     [DataRow("seven", "eight", "nine")]
     public void GenLinkedListStringMultipleNodesTestMethod(string value1, string value2, string value3)
     {
+        MultipleNodesTestMethod<string>(value1, value2, value3);
+    }
+
+    private void SingleNodeTestMethod<T>(T value)
+    {
         // Arrange
-        GenLinkedList<string> genListStr = new GenLinkedList<string>();
+        GenLinkedList<T> genList = new GenLinkedList<T>();
         // Act
-        genListStr.AddNode(value1);
-        genListStr.AddNode(value2);
-        genListStr.AddNode(value3);
+        genList.AddNode(value);
         // Assert
-        if (genListStr.Head != null)
+        Assert.IsNotNull(genList.Head, "Head node is null.");
+        if (genList.Head != null) Assert.AreEqual(value, genList.Head.Value, "Head node value is incorrect.");
+    }
+    private void MultipleNodesTestMethod<T>(T value1, T value2, T value3)
+    {
+        // Arrange
+        GenLinkedList<T> genList = new GenLinkedList<T>();
+        // Act
+        genList.AddNode(value1);
+        genList.AddNode(value2);
+        genList.AddNode(value3);
+        // Assert
+        Assert.IsNotNull(genList.Head, "Head node is null.");
+        if (genList.Head != null)
         {
-            Assert.AreEqual(value1, genListStr.Head.Value);
-            Assert.AreEqual(value2, genListStr.Head.Next.Value);
-            Assert.AreEqual(value3, genListStr.Head.Next.Next.Value);
+            Assert.AreEqual(value1, genList.Head.Value, "Head node value is incorrect.");
+            Assert.AreEqual(value2, genList.Head.Next.Value, "Second node value is incorrect.");
+            Assert.AreEqual(value3, genList.Head.Next.Next.Value, "Third node value is incorrect.");
+        }
+    }
+    private void ArrayMultipleNodesTestMethod<T>(T[] values)
+    {
+        // Arrange
+        GenLinkedList<T> genList = new GenLinkedList<T>();
+        // Act
+        foreach (T value in values)
+        {
+            genList.AddNode(value);
+        }
+        // Assert
+        Assert.IsNotNull(genList.Head, "Head node is null.");
+        if (genList.Head != null)
+        {
+            Node<T> current = genList.Head;
+            foreach (var value in values)
+            {
+                Assert.AreEqual(value, current.Value, $"Node value {value} is incorrect.");
+                current = current.Next;
+            }
         }
     }
 }
