@@ -78,6 +78,32 @@ public class GenLinkedListTest
     }
 
     [TestMethod]
+    [DataRow(new double[] {1, 2, 3})]
+    [DataRow(new double[] {4, 5, 6})]
+    [DataRow(new double[] {7, 8, 9})]
+    public void GenLinkedListIntArrayMultipleNodesTestMethod(double[] values)
+    {
+        // Arrange
+        GenLinkedList<double> genListDbl = new GenLinkedList<double>();
+        // Act
+        foreach (double value in values)
+        {
+            genListDbl.AddNode(value);
+        }
+        // Assert
+        if (genListDbl.Head != null)
+        {
+            Node<double> current = genListDbl.Head;
+
+            foreach (var value in values)
+            {
+                Assert.AreEqual(value, current.Value);
+                current = current.Next;
+            }
+        }
+    }
+
+    [TestMethod]
     [DataRow("one")]
     [DataRow("two")]
     [DataRow("three")]
