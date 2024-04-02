@@ -3,7 +3,7 @@ using LibLinkedList2;
 
 namespace LibLinkedList2Test;
 [TestClass]
-public class LinkedListTest
+public class SimpleLinkedListTest
 {
     [TestMethod]
     [DataRow(1)]
