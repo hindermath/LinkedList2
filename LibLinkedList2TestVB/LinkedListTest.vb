@@ -44,6 +44,16 @@ Namespace LibLinkedList2TestVB
         Sub GenLinkedListIntSingleNodeTestSub(value As Integer)
             SingleNodeTestSub(Of Integer)(value)
         End Sub
+        <TestMethod>
+        <DataRow("A")>
+        Sub GenLinkedListStringMultipleNodesCountTestSub(value As String)
+            REM Arrange
+            DIM genList AS GenLinkedList(Of String) = NEW GenLinkedList(Of String)()
+            REM Act
+            genList.AddNode(value)
+            REM Assert
+            Assert.AreEqual(1, genList.Count, "The count of nodes in the list is incorrect.")
+        End Sub
 
         Private Sub SingleNodeTestSub(Of T)(value As T)
             REM Arrange

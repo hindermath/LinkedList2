@@ -38,6 +38,20 @@ public class SimpleLinkedListTest
             Assert.AreEqual(value3, list.Head.Next.Next.Value);
         }
     }
+
+    [TestMethod]
+    [DataRow(1, +2, -3)]
+    public void LinkedListMultipleNodesCountTestMethod(int value1, int value2, int value3)
+    {
+        // Arrange
+        SimpleLinkedList list = new SimpleLinkedList();
+        // Act
+        list.AddNode(value1);
+        list.AddNode(value2);
+        list.AddNode(value3);
+        // Assert
+        Assert.AreEqual(3, list.Count);
+    }
 }
 
 [TestClass]
@@ -79,6 +93,19 @@ public class GenLinkedListTest
     {
         SingleNodeTestMethod<string>(value);
     }
+
+    [TestMethod]
+    [DataRow("one")]
+    public void GenLinkedListStringMultipleNodesCountTestMethod(string value)
+    {
+        // Arrange
+        GenLinkedList<string> genList = new GenLinkedList<string>();
+        // Act
+        genList.AddNode(value);
+        // Assert
+        Assert.AreEqual(1, genList.Count, "The count of nodes in the list is incorrect.");
+    }
+
     [TestMethod]
     [DataRow("one", "two", "three")]
     [DataRow("four", "five", "six")]
