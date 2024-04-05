@@ -10,7 +10,7 @@ Namespace LibLinkedList2TestVB
         <DataRow(+3)>
         Sub LinkedListSingleNodeTestSub(value As Integer)
             REM Arrange
-            DIM list AS SimpleLinkedList = NEW SimpleLinkedList()
+            DIM list AS IntegerLinkedList = NEW IntegerLinkedList()
             REM Act
             list.AddNode(value)
             REM Assert
@@ -22,7 +22,7 @@ Namespace LibLinkedList2TestVB
         <DataRow(+7, 8, -9)>
         Sub LinkedListMultipleNodesTestSub(value1 As Integer, value2 As Integer, value3 As Integer)
             REM Arrange
-            DIM list AS SimpleLinkedList = NEW SimpleLinkedList()
+            DIM list AS IntegerLinkedList = NEW IntegerLinkedList()
             REM Act
             list.AddNode(value1)
             list.AddNode(value2)

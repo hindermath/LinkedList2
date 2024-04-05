@@ -12,12 +12,12 @@ public class Node
     }
 }
 
-public class SimpleLinkedList
+public class IntegerLinkedList
 {
     public Node? Head { get; set; }
     public int Count { get; private set; }
 
-    public SimpleLinkedList()
+    public IntegerLinkedList()
     {
         Head = null;
         Count = 0; // Initialize the count to 0

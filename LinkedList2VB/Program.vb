@@ -3,7 +3,7 @@ Imports LibLinkedList2
 
 Module Program
     Sub Main(args As String())
-        DIM list AS SimpleLinkedList = NEW SimpleLinkedList()
+        DIM list AS IntegerLinkedList = NEW IntegerLinkedList()
         DIM genericListInt AS GenericLinkedList(Of Integer) = NEW GenericLinkedList(Of Integer)()
         DIM genericListStr AS GenericLinkedList(Of String) = NEW GenericLinkedList(Of String)()
 

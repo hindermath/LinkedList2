@@ -3,7 +3,7 @@ using LibLinkedList2;
 
 namespace LibLinkedList2Test;
 [TestClass]
-public class SimpleLinkedListTest
+public class IntegerLinkedListTest
 {
     [TestMethod]
     [DataRow(1)]
@@ -12,7 +12,7 @@ public class SimpleLinkedListTest
     public void LinkedListSingleNodeTestMethod(int value)
     {
         // Arrange
-        SimpleLinkedList list = new SimpleLinkedList();
+        IntegerLinkedList list = new IntegerLinkedList();
         // Act
         list.AddNode(value);
         // Assert
@@ -25,7 +25,7 @@ public class SimpleLinkedListTest
     public void LinkedListMultipleNodesTestMethod(int value1, int value2, int value3)
     {
         // Arrange
-        SimpleLinkedList list = new SimpleLinkedList();
+        IntegerLinkedList list = new IntegerLinkedList();
         // Act
         list.AddNode(value1);
         list.AddNode(value2);
@@ -44,7 +44,7 @@ public class SimpleLinkedListTest
     public void LinkedListMultipleNodesCountTestMethod(int value1, int value2, int value3)
     {
         // Arrange
-        SimpleLinkedList list = new SimpleLinkedList();
+        IntegerLinkedList list = new IntegerLinkedList();
         // Act
         list.AddNode(value1);
         list.AddNode(value2);
