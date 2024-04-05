@@ -24,8 +24,8 @@ public class Node<T>
     /// <typeparam name="T">The type of the value of the node.</typeparam>
     public Node(T value)
     {
-        Value = value; // Initialize the value of the node
-        Next = null; // Initialize the next node to null
+        Value = value;
+        Next = null;
     }
 }
 
