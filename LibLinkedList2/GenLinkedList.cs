@@ -17,7 +17,7 @@ public class Node<T>
 public class GenLinkedList<T>
 {
     public Node<T>? Head { get; set; }
-    public int Count { get; private set; } // Initialize the count to 0
+    public int Count { get; private set; }
 
     public GenLinkedList()
     {
