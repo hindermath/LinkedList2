@@ -1,39 +1,66 @@
 namespace LibLinkedList2;
+
 /// <summary>
-/// Klasse Node mit generischem Typ T für die Verwendung in der generischen Klasse GenLinkedList
+/// Represents a node in the generic linked list.
 /// </summary>
-/// <typeparam name="T"></typeparam>
+/// <typeparam name="T">The type of the value of the node.</typeparam>
 public class Node<T>
 {
     /// <summary>
-    /// Wert des Knotens
+    /// Represents the value of a node in a generic linked list. The value can be of any type.
     /// </summary>
+    /// <typeparam name="T">The type of the value.</typeparam>
     public T Value { get; set; }
+
     /// <summary>
-    /// Nächtser Knoten
+    /// Represents the next node in a generic linked list.
     /// </summary>
+    /// <typeparam name="T">The type of the value of the next node.</typeparam>
     public Node<T>? Next { get; set; }
+
     /// <summary>
-    /// Konstruktor der Klasse Node mit der Übergabe des Wertes
+    /// Represents a node in the generic linked list.
     /// </summary>
-    /// <param name="value">Wert des Knotens</param>
+    /// <typeparam name="T">The type of the value of the node.</typeparam>
     public Node(T value)
     {
-        Value = value;
-        Next = null;
+        Value = value; // Initialize the value of the node
+        Next = null; // Initialize the next node to null
     }
 }
 
+/// <summary>
+/// Represents a generic linked list.
+/// </summary>
+/// <typeparam name="T">The type of the elements in the linked list.</typeparam>
 public class GenLinkedList<T>
 {
+    /// <summary>
+    /// Represents the head of a generic linked list.
+    /// </summary>
+    /// <typeparam name="T">The type of the elements in the linked list.</typeparam>
     public Node<T>? Head { get; set; }
+
+    /// <summary>
+    /// Gets the number of nodes in the linked list.
+    /// </summary>
     public int Count { get; private set; }
 
+    /// <summary>
+    /// Represents a node in the generic linked list.
+    /// </summary>
+    /// <typeparam name="T">The type of the value of the node.</typeparam>
     public GenLinkedList()
     {
         Head = null;
-        Count = 0; // Initialize the count to 0
+        Count = 0;
     }
+
+    /// <summary>
+    /// Adds a new node with the specified value to the end of the linked list.
+    /// </summary>
+    /// <typeparam name="T">The type of the value of the node.</typeparam>
+    /// <param name="value">The value of the node to be added.</param>
     public void AddNode(T value)
     {
         Node<T> newNode = new Node<T>(value);
@@ -51,9 +78,12 @@ public class GenLinkedList<T>
             }
             current.Next = newNode;
         }
-        Count++; // Increment the count when a new node is added
+        Count++;
     }
 
+    /// <summary>
+    /// Prints the values of each node in a linked list and the count of nodes.
+    /// </summary>
     public void PrintList()
     {
         Node<T> current = Head;
