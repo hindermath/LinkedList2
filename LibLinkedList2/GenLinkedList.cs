@@ -1,10 +1,22 @@
 namespace LibLinkedList2;
-
+/// <summary>
+/// Klasse Node mit generischem Typ T für die Verwendung in der generischen Klasse GenLinkedList
+/// </summary>
+/// <typeparam name="T"></typeparam>
 public class Node<T>
 {
+    /// <summary>
+    /// Wert des Knotens
+    /// </summary>
     public T Value { get; set; }
+    /// <summary>
+    /// Nächtser Knoten
+    /// </summary>
     public Node<T>? Next { get; set; }
-
+    /// <summary>
+    /// Konstruktor der Klasse Node mit der Übergabe des Wertes
+    /// </summary>
+    /// <param name="value">Wert des Knotens</param>
     public Node(T value)
     {
         Value = value;
