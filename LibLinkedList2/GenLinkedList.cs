@@ -39,7 +39,7 @@ public class GenLinkedList<T>
     /// Represents the head of a generic linked list.
     /// </summary>
     /// <typeparam name="T">The type of the elements in the linked list.</typeparam>
-    public Node<T>? Head { get; set; }
+    public Node<T>? Head { get; private set; }
 
     /// <summary>
     /// Gets the number of nodes in the linked list.
@@ -63,7 +63,7 @@ public class GenLinkedList<T>
     /// <param name="value">The value of the node to be added.</param>
     public void AddNode(T value)
     {
-        Node<T> newNode = new Node<T>(value);
+        var newNode = new Node<T>(value);
 
         if (Head == null)
         {
@@ -71,7 +71,7 @@ public class GenLinkedList<T>
         }
         else
         {
-            Node<T> current = Head;
+            var current = Head;
             while (current.Next != null)
             {
                 current = current.Next;
@@ -86,10 +86,10 @@ public class GenLinkedList<T>
     /// </summary>
     public void PrintList()
     {
-        Node<T> current = Head;
+        var current = Head;
         while (current != null)
         {
-            Console.WriteLine($"Current Node value: {current.Value} of type {current.Value.GetType()}"); // Print the value and type of the current node
+            Console.WriteLine($"Current Node value: {current.Value} of type {current.Value.GetType()}");
             current = current.Next;
         }
         Console.WriteLine($"The linked list has {Count} nodes.");
