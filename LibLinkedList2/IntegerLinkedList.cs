@@ -2,7 +2,7 @@
 
 public class Node
 {
-    public int Value { get; set; }
+    public int Value { get; }
     public Node? Next { get; set; }
 
     public Node(int value)
@@ -14,13 +14,13 @@ public class Node
 
 public class IntegerLinkedList
 {
-    public Node? Head { get; set; }
+    public Node? Head { get; private set; }
     public int Count { get; private set; }
 
     public IntegerLinkedList()
     {
         Head = null;
-        Count = 0; // Initialize the count to 0
+        Count = 0;
     }
     public void AddNode(int value)
     {
@@ -39,7 +39,7 @@ public class IntegerLinkedList
             }
             current.Next = newNode;
         }
-        Count++; // Increment the count when a new node is added
+        Count++;
     }
 
     public void PrintList()
