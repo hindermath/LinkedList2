@@ -4,22 +4,22 @@ Imports LibLinkedList2
 Module Program
     Sub Main(args As String())
         DIM list AS SimpleLinkedList = NEW SimpleLinkedList()
-        DIM genListInt AS GenLinkedList(Of Integer) = NEW GenLinkedList(Of Integer)()
-        DIM genListStr AS GenLinkedList(Of String) = NEW GenLinkedList(Of String)()
+        DIM genericListInt AS GenericLinkedList(Of Integer) = NEW GenericLinkedList(Of Integer)()
+        DIM genericListStr AS GenericLinkedList(Of String) = NEW GenericLinkedList(Of String)()
 
         list.AddNode(1)
         list.AddNode(2)
         list.AddNode(3)
         list.PrintList()
 
-        genListInt.AddNode(1)
-        genListInt.AddNode(2)
-        genListInt.AddNode(3)
-        genListInt.PrintList()
+        genericListInt.AddNode(1)
+        genericListInt.AddNode(2)
+        genericListInt.AddNode(3)
+        genericListInt.PrintList()
 
-        genListStr.AddNode("one")
-        genListStr.AddNode("two")
-        genListStr.AddNode("three")
-        genListStr.PrintList()
+        genericListStr.AddNode("one")
+        genericListStr.AddNode("two")
+        genericListStr.AddNode("three")
+        genericListStr.PrintList()
     End Sub
 End Module

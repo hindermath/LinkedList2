@@ -48,22 +48,22 @@ Namespace LibLinkedList2TestVB
         <DataRow("A")>
         Sub GenLinkedListStringMultipleNodesCountTestSub(value As String)
             REM Arrange
-            DIM genList AS GenLinkedList(Of String) = NEW GenLinkedList(Of String)()
+            DIM genericList AS GenericLinkedList(Of String) = NEW GenericLinkedList(Of String)()
             REM Act
-            genList.AddNode(value)
+            genericList.AddNode(value)
             REM Assert
-            Assert.AreEqual(1, genList.Count, "The count of nodes in the list is incorrect.")
+            Assert.AreEqual(1, genericList.Count, "The count of nodes in the list is incorrect.")
         End Sub
 
         Private Sub SingleNodeTestSub(Of T)(value As T)
             REM Arrange
-            DIM genList AS GenLinkedList(Of T) = NEW GenLinkedList(Of T)()
+            DIM genericList AS GenericLinkedList(Of T) = NEW GenericLinkedList(Of T)()
             REM Act
-            genList.AddNode(value)
+            genericList.AddNode(value)
             REM Assert
-            Assert.isNotNull(genList.Head, "Head node is null.")
-            If genList.Head isNot Nothing Then
-                Assert.AreEqual(value, genList.Head.Value, "Head node value is incorrect.")
+            Assert.isNotNull(genericList.Head, "Head node is null.")
+            If genericList.Head isNot Nothing Then
+                Assert.AreEqual(value, genericList.Head.Value, "Head node value is incorrect.")
             End If
         End Sub
     End Class

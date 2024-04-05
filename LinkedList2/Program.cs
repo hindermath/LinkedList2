@@ -2,20 +2,20 @@
 using LibLinkedList2;
 
 SimpleLinkedList list = new SimpleLinkedList();
-GenLinkedList<int> genListInt = new GenLinkedList<int>();
-GenLinkedList<string> genListStr = new GenLinkedList<string>();
+GenericLinkedList<int> genericListInt = new GenericLinkedList<int>();
+GenericLinkedList<string> genericListStr = new GenericLinkedList<string>();
 
 list.AddNode(1);
 list.AddNode(2);
 list.AddNode(3);
 list.PrintList();
 
-genListInt.AddNode(1);
-genListInt.AddNode(2);
-genListInt.AddNode(3);
-genListInt.PrintList();
+genericListInt.AddNode(1);
+genericListInt.AddNode(2);
+genericListInt.AddNode(3);
+genericListInt.PrintList();
 
-genListStr.AddNode("one");
-genListStr.AddNode("two");
-genListStr.AddNode("three");
-genListStr.PrintList();
+genericListStr.AddNode("one");
+genericListStr.AddNode("two");
+genericListStr.AddNode("three");
+genericListStr.PrintList();

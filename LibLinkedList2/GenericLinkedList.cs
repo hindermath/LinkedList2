@@ -33,7 +33,7 @@ public class Node<T>
 /// Represents a generic linked list.
 /// </summary>
 /// <typeparam name="T">The type of the elements in the linked list.</typeparam>
-public class GenLinkedList<T>
+public class GenericLinkedList<T>
 {
     /// <summary>
     /// Represents the head of a generic linked list.
@@ -50,7 +50,7 @@ public class GenLinkedList<T>
     /// Represents a node in the generic linked list.
     /// </summary>
     /// <typeparam name="T">The type of the value of the node.</typeparam>
-    public GenLinkedList()
+    public GenericLinkedList()
     {
         Head = null;
         Count = 0;
