@@ -1,5 +1,5 @@
+// Purpose: Contains the GenericLinkedList class and the Node class. The GenericLinkedList class represents a generic linked list. The Node class represents a node in a generic linked list.
 namespace LibLinkedList2;
-
 /// <summary>
 /// Represents a node in the generic linked list.
 /// </summary>
@@ -42,6 +42,12 @@ public class GenericLinkedList<T>
     public Node<T>? Head { get; private set; }
 
     /// <summary>
+    /// The tail node of a generic linked list.
+    /// </summary>
+    /// <typeparam name="T">The type of the elements in the linked list.</typeparam>
+    public Node<T>? Tail { get; private set; }
+
+    /// <summary>
     /// Gets the number of nodes in the linked list.
     /// </summary>
     public int Count { get; private set; }
@@ -53,6 +59,7 @@ public class GenericLinkedList<T>
     public GenericLinkedList()
     {
         Head = null;
+        Tail = null;
         Count = 0;
     }
 
@@ -77,6 +84,22 @@ public class GenericLinkedList<T>
                 current = current.Next;
             }
             current.Next = newNode;
+        }
+        Count++;
+    }
+    public void AddNodeO1(T value)
+    {
+        var newNode = new Node<T>(value);
+
+        if (Head == null)
+        {
+            Head = newNode;
+            Tail = Head;
+        }
+        else
+        {
+            Tail.Next = newNode;
+            Tail = newNode;
         }
         Count++;
     }
