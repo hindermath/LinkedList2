@@ -1,10 +1,11 @@
 // Purpose: Contains the GenericLinkedList class and the Node class. The GenericLinkedList class represents a generic linked list. The Node class represents a node in a generic linked list.
 namespace LibLinkedList2;
+
 /// <summary>
-/// Represents a node in the generic linked list.
+/// Represents a node in a generic linked list.
 /// </summary>
 /// <typeparam name="T">The type of the value of the node.</typeparam>
-public class NodeObsolete<T>
+public class GenericLinkedListNode<T>
 {
     /// <summary>
     /// Represents the value of a node in a generic linked list. The value can be of any type.
@@ -16,13 +17,13 @@ public class NodeObsolete<T>
     /// Represents the next node in a generic linked list.
     /// </summary>
     /// <typeparam name="T">The type of the value of the next node.</typeparam>
-    public NodeObsolete<T>? Next { get; set; }
+    public GenericLinkedListNode<T>? Next { get; set; }
 
     /// <summary>
     /// Represents a node in the generic linked list.
     /// </summary>
     /// <typeparam name="T">The type of the value of the node.</typeparam>
-    public NodeObsolete(T value)
+    public GenericLinkedListNode(T value)
     {
         Value = value;
         Next = null;
@@ -35,42 +36,17 @@ public class NodeObsolete<T>
 /// <typeparam name="T">The type of the elements in the linked list.</typeparam>
 public class GenericLinkedList<T>
 {
-    private class Node<T>
-    {
-        /// <summary>
-        /// Represents the value of a node in a generic linked list. The value can be of any type.
-        /// </summary>
-        /// <typeparam name="T">The type of the value.</typeparam>
-        public T Value { get; set; }
-
-        /// <summary>
-        /// Represents the next node in a generic linked list.
-        /// </summary>
-        /// <typeparam name="T">The type of the value of the next node.</typeparam>
-        internal Node<T>? Next { get; set; }
-
-        /// <summary>
-        /// Represents a node in the generic linked list.
-        /// </summary>
-        /// <typeparam name="T">The type of the value of the node.</typeparam>
-        public Node(T value)
-        {
-            Value = value;
-            Next = null;
-        }
-    }
-
     /// <summary>
     /// Represents the head of a generic linked list.
     /// </summary>
     /// <typeparam name="T">The type of the elements in the linked list.</typeparam>
-    private Node<T>? Head { get; set; }
+    public GenericLinkedListNode<T>? Head { get; set; }
 
     /// <summary>
     /// The tail node of a generic linked list.
     /// </summary>
     /// <typeparam name="T">The type of the elements in the linked list.</typeparam>
-    private Node<T>? Tail { get; set; }
+    public GenericLinkedListNode<T>? Tail { get; set; }
 
     /// <summary>
     /// Gets the number of nodes in the linked list.
@@ -95,7 +71,7 @@ public class GenericLinkedList<T>
     /// <param name="value">The value of the node to be added.</param>
     public void AddNode(T value)
     {
-        var newNode = new Node<T>(value);
+        var newNode = new GenericLinkedListNode<T>(value);
 
         if (Head == null)
         {
@@ -114,7 +90,7 @@ public class GenericLinkedList<T>
     }
     public void AddNodeO1(T value)
     {
-        var newNode = new Node<T>(value);
+        var newNode = new GenericLinkedListNode<T>(value);
 
         if (Head == null)
         {
