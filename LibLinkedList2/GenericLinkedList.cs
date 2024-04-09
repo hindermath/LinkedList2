@@ -1,6 +1,5 @@
 // Purpose: Contains the GenericLinkedList class and the Node class. The GenericLinkedList class represents a generic linked list. The Node class represents a node in a generic linked list.
 namespace LibLinkedList2;
-
 /// <summary>
 /// Represents a node in a generic linked list.
 /// </summary>
@@ -40,13 +39,13 @@ public class GenericLinkedList<T>
     /// Represents the head of a generic linked list.
     /// </summary>
     /// <typeparam name="T">The type of the elements in the linked list.</typeparam>
-    public GenericLinkedListNode<T>? Head { get; set; }
+    public GenericLinkedListNode<T>? First { get; set; }
 
     /// <summary>
     /// The tail node of a generic linked list.
     /// </summary>
     /// <typeparam name="T">The type of the elements in the linked list.</typeparam>
-    public GenericLinkedListNode<T>? Tail { get; set; }
+    public GenericLinkedListNode<T>? Last { get; set; }
 
     /// <summary>
     /// Gets the number of nodes in the linked list.
@@ -59,8 +58,8 @@ public class GenericLinkedList<T>
     /// <typeparam name="T">The type of the value of the node.</typeparam>
     public GenericLinkedList()
     {
-        Head = null;
-        Tail = null;
+        First = null;
+        Last = null;
         Count = 0;
     }
 
@@ -73,13 +72,13 @@ public class GenericLinkedList<T>
     {
         var newNode = new GenericLinkedListNode<T>(value);
 
-        if (Head == null)
+        if (First == null)
         {
-            Head = newNode;
+            First = newNode;
         }
         else
         {
-            var current = Head;
+            var current = First;
             while (current.Next != null)
             {
                 current = current.Next;
@@ -92,15 +91,15 @@ public class GenericLinkedList<T>
     {
         var newNode = new GenericLinkedListNode<T>(value);
 
-        if (Head == null)
+        if (First == null)
         {
-            Head = newNode;
-            Tail = Head;
+            First = newNode;
+            Last = First;
         }
         else
         {
-            Tail!.Next = newNode;
-            Tail = newNode;
+            Last!.Next = newNode;
+            Last = newNode;
         }
         Count++;
     }

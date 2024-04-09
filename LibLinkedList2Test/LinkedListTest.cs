@@ -134,8 +134,8 @@ public class GenericLinkedListTest
         // Act
         genericList.AddNode(value);
         // Assert
-        Assert.IsNotNull(genericList.Head, "Head node is null.");
-        if (genericList.Head != null) Assert.AreEqual(value, genericList.Head.Value, "Head node value is incorrect.");
+        Assert.IsNotNull(genericList.First, "Head node is null.");
+        if (genericList.First != null) Assert.AreEqual(value, genericList.First.Value, "Head node value is incorrect.");
     }
     private void MultipleNodesTestMethod<T>(T value1, T value2, T value3)
     {
@@ -146,12 +146,12 @@ public class GenericLinkedListTest
         genericList.AddNode(value2);
         genericList.AddNode(value3);
         // Assert
-        Assert.IsNotNull(genericList.Head, "Head node is null.");
-        if (genericList.Head != null)
+        Assert.IsNotNull(genericList.First, "Head node is null.");
+        if (genericList.First != null)
         {
-            Assert.AreEqual(value1, genericList.Head.Value, "Head node value is incorrect.");
-            Assert.AreEqual(value2, genericList.Head.Next.Value, "Second node value is incorrect.");
-            Assert.AreEqual(value3, genericList.Head.Next.Next.Value, "Third node value is incorrect.");
+            Assert.AreEqual(value1, genericList.First.Value, "Head node value is incorrect.");
+            Assert.AreEqual(value2, genericList.First.Next.Value, "Second node value is incorrect.");
+            Assert.AreEqual(value3, genericList.First.Next.Next.Value, "Third node value is incorrect.");
         }
     }
     private void ArrayMultipleNodesTestMethod<T>(T[] values)
@@ -164,10 +164,10 @@ public class GenericLinkedListTest
             genericList.AddNode(value);
         }
         // Assert
-        Assert.IsNotNull(genericList.Head, "Head node is null.");
-        if (genericList.Head != null)
+        Assert.IsNotNull(genericList.First, "Head node is null.");
+        if (genericList.First != null)
         {
-            Node<T> current = genericList.Head;
+            Node<T> current = genericList.First;
             foreach (var value in values)
             {
                 Assert.AreEqual(value, current.Value, $"Node value {value} is incorrect.");

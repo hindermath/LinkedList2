@@ -61,9 +61,9 @@ Namespace LibLinkedList2TestVB
             REM Act
             genericList.AddNode(value)
             REM Assert
-            Assert.isNotNull(genericList.Head, "Head node is null.")
-            If genericList.Head isNot Nothing Then
-                Assert.AreEqual(value, genericList.Head.Value, "Head node value is incorrect.")
+            Assert.isNotNull(genericList.First, "Head node is null.")
+            If genericList.First isNot Nothing Then
+                Assert.AreEqual(value, genericList.First.Value, "Head node value is incorrect.")
             End If
         End Sub
     End Class
