@@ -41,15 +41,4 @@ public class IntegerLinkedList
         }
         Count++;
     }
-
-    public void PrintList()
-    {
-        Node current = Head;
-        while (current != null)
-        {
-            Console.WriteLine($"Current Node value: {current.Value} of type {current.Value.GetType()}"); // Print the value and type of the current node
-            current = current.Next;
-        }
-        Console.WriteLine($"The linked list has {Count} nodes.");
-    }
 }

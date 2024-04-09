@@ -128,39 +128,4 @@ public class GenericLinkedList<T>
         }
         Count++;
     }
-
-    /// <summary>
-    /// Prints the values of each node in a linked list and the count of nodes.
-    /// </summary>
-    public void PrintList()
-    {
-        var current = Head;
-        while (current != null)
-        {
-            Console.WriteLine($"Current Node value: {current.Value} of type {current.Value.GetType()}");
-            current = current.Next;
-        }
-        Console.WriteLine($"The linked list has {Count} nodes.");
-    }
-
-    /// <summary>
-    /// Prints the values of each node in a linked list and the count of nodes.
-    /// </summary>
-    /// <param name="writer"></param>
-    public void PrintList(TextWriter writer)
-    {
-        writer.WriteLine("Start of LinkedList print out:");
-
-        var counter = 0;
-        var current = Head;
-        while (current != null)
-        {
-            writer.WriteLine(
-                $"Node at index {counter} has value of type {current.Value.GetType()} and value: {current.Value}");
-            current = current.Next;
-            counter++;
-        }
-
-        writer.WriteLine($"End of LinkedList printout. The linked list has {Count} nodes in total.");
-    }
 }
