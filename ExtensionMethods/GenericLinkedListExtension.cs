@@ -30,4 +30,20 @@ public static class GenericLinkedListExtension
 
         writer.WriteLine($"End of LinkedList printout. The linked list has {list.Count} nodes in total.");
     }
+
+    public static void Print(IntegerLinkedList list, TextWriter writer)
+    {
+        writer.WriteLine("Start of LinkedList print out:");
+
+        var counter = 0;
+        var current = list.Head;
+        while (current != null)
+        {
+            writer.WriteLine($"Node at index {counter} has value of type {current.Value.GetType()} and value: {current.Value}");
+            current = current.Next;
+            counter++;
+        }
+
+        writer.WriteLine($"End of LinkedList printout. The linked list has {list.Count} nodes in total.");
+    }
 }
