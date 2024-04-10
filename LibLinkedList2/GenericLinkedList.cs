@@ -1,4 +1,9 @@
-// Purpose: Contains the GenericLinkedList class and the Node class. The GenericLinkedList class represents a generic linked list. The Node class represents a node in a generic linked list.
+// Purpose: Contains the GenericLinkedList class and the Node class. The GenericLinkedList class represents
+// a generic linked list. The Node class represents a node in a generic linked list.
+// Creator: Thorsten Hindermann
+// Created: 2024-04-10
+// Modified: 2024-04-10
+#define PUBLICNODE
 namespace LibLinkedList2;
 /// <summary>
 /// Represents a node in a generic linked list.
@@ -39,13 +44,21 @@ public class GenericLinkedList<T>
     /// Represents the head of a generic linked list.
     /// </summary>
     /// <typeparam name="T">The type of the elements in the linked list.</typeparam>
+    #if PUBLICNODE
     public GenericLinkedListNode<T>? First { get; private set; }
+    #else
+    private Node? First { get; set; }
+    #endif
 
     /// <summary>
     /// The tail node of a generic linked list.
     /// </summary>
     /// <typeparam name="T">The type of the elements in the linked list.</typeparam>
+    #if PUBLICNODE
     public GenericLinkedListNode<T>? Last { get; set; }
+    #else
+    private Node? Last { get; set; }
+    #endif
 
     /// <summary>
     /// Gets the number of nodes in the linked list.
@@ -70,7 +83,11 @@ public class GenericLinkedList<T>
     /// <param name="value">The value of the node to be added.</param>
     public void AddNode(T value)
     {
+        #if PUBLICNODE
         var newNode = new GenericLinkedListNode<T>(value);
+        #else
+        var newNode = new Node(value);
+        #endif
 
         if (First == null)
         {
@@ -87,9 +104,20 @@ public class GenericLinkedList<T>
         }
         Count++;
     }
+
+    /// <summary>
+    /// Adds a new node with the specified value to the end of the linked list.
+    /// This operation has a time complexity of O(1).
+    /// </summary>
+    /// <typeparam name="T">The type of the value of the node.</typeparam>
+    /// <param name="value">The value of the node to be added.</param>
     public void AddNodeO1(T value)
     {
+        #if PUBLICNODE
         var newNode = new GenericLinkedListNode<T>(value);
+        #else
+        var newNode = new Node(value);
+        #endif
 
         if (First == null)
         {
