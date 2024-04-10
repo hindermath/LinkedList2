@@ -2,6 +2,7 @@
 
 using System.Diagnostics;
 using LibLinkedList2;
+using ExtensionMethods;
 
 IntegerLinkedList list = new IntegerLinkedList();
 GenericLinkedList<int> genericListInt = new GenericLinkedList<int>();
@@ -19,6 +20,7 @@ PrintList(list, Console.Out);
 genericListInt.AddNode(1);
 genericListInt.AddNode(2);
 genericListInt.AddNode(3);
+genericListInt.Print(Console.Out);
 //PrintGenericList<int>(genericListInt, Console.Out);
 //PrintGenericList<int>(genericListInt, fileWriter);
 //PrintGenericList<int>(genericListInt, stringWriter);
@@ -29,6 +31,7 @@ var debugOutput = debugWriter.ToString();
 genericListStr.AddNode("one");
 genericListStr.AddNode("two");
 genericListStr.AddNode("three");
+genericListStr.Print(Console.Out);
 //PrintGenericList<string>(genericListStr, Console.Out);
 //PrintGenericList<string>(genericListStr, fileWriter);
 //PrintGenericList<string>(genericListStr, stringWriter);
