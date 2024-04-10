@@ -39,7 +39,7 @@ public class GenericLinkedList<T>
     /// Represents the head of a generic linked list.
     /// </summary>
     /// <typeparam name="T">The type of the elements in the linked list.</typeparam>
-    public GenericLinkedListNode<T>? First { get; set; }
+    public GenericLinkedListNode<T>? First { get; private set; }
 
     /// <summary>
     /// The tail node of a generic linked list.
@@ -94,7 +94,7 @@ public class GenericLinkedList<T>
         if (First == null)
         {
             First = newNode;
-            Last = First;
+            Last = newNode;
         }
         else
         {
@@ -102,5 +102,53 @@ public class GenericLinkedList<T>
             Last = newNode;
         }
         Count++;
+    }
+
+    /// <summary>
+    /// Retrieves the element at the specified index in the generic linked list.
+    /// </summary>
+    /// <param name="index">The zero-based index of the element to retrieve.</param>
+    /// <returns>The element at the specified index.</returns>
+    /// <exception cref="ArgumentOutOfRangeException">Thrown when the index is less than 0 or larger than the index of the last element in the list.</exception>
+    public T ItemAt(int index)
+    {
+        if (index < 0)
+        {
+            throw new ArgumentOutOfRangeException(nameof(index), "Index must not be negative");
+        }
+
+        if (First is null)
+        {
+            throw new ArgumentOutOfRangeException(nameof(index), "Index was too large for the list");
+        }
+
+        var currentNode = First;
+        for (var i = 0; i < index; i++)
+        {
+            currentNode = currentNode.Next;
+
+            if (currentNode is null)
+            {
+                throw new ArgumentOutOfRangeException(nameof(index), "Index was too large for the list");
+            }
+        }
+
+        return currentNode.Value;
+    }
+
+    /// <summary>
+    /// Represents a node in the generic linked list.
+    /// </summary>
+    /// <typeparam name="T">The type of the value of the node.</typeparam>
+    private sealed class Node
+    {
+        internal Node(T value)
+        {
+            Value = value;
+        }
+
+        internal T Value { get; }
+
+        internal Node? Next { get; set; }
     }
 }
