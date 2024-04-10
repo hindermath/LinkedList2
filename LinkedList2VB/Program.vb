@@ -10,16 +10,16 @@ Module Program
         list.AddNode(1)
         list.AddNode(2)
         list.AddNode(3)
-        list.PrintList()
+        REM list.PrintList()
 
         genericListInt.AddNode(1)
         genericListInt.AddNode(2)
         genericListInt.AddNode(3)
-        genericListInt.PrintList()
+        REM genericListInt.PrintList()
 
         genericListStr.AddNode("one")
         genericListStr.AddNode("two")
         genericListStr.AddNode("three")
-        genericListStr.PrintList()
+        REM genericListStr.PrintList()
     End Sub
 End Module
