@@ -37,34 +37,22 @@ Namespace LibLinkedList2TestVB
     <TestClass>
     Public Class GenLinkedListTestVb
         <TestMethod>
-        <DataRow(1)>
-        <DataRow(-2)>
-        <DataRow(+3)>
-        <DataRow(0)>
-        Sub GenLinkedListIntSingleNodeTestSub(value As Integer)
-            SingleNodeTestSub(Of Integer)(value)
+        Sub CountOfEmptyList()
+            REM Arrange
+            DIM list AS GenericLinkedList(Of Integer) = NEW GenericLinkedList(Of Integer)()
+            REM Act
+            REM Assert
+            Assert.AreEqual(0, list.Count, "The count of nodes in the list is incorrect.")
         End Sub
         <TestMethod>
-        <DataRow("A")>
-        Sub GenLinkedListStringMultipleNodesCountTestSub(value As String)
+        Sub AddItem()
             REM Arrange
-            DIM genericList AS GenericLinkedList(Of String) = NEW GenericLinkedList(Of String)()
+            DIM list AS GenericLinkedList(Of Integer) = NEW GenericLinkedList(Of Integer)()
             REM Act
-            genericList.AddNode(value)
+            list.AddNode(42)
             REM Assert
-            Assert.AreEqual(1, genericList.Count, "The count of nodes in the list is incorrect.")
-        End Sub
-
-        Private Sub SingleNodeTestSub(Of T)(value As T)
-            REM Arrange
-            DIM genericList AS GenericLinkedList(Of T) = NEW GenericLinkedList(Of T)()
-            REM Act
-            genericList.AddNode(value)
-            REM Assert
-            Assert.isNotNull(genericList.First, "Head node is null.")
-            If genericList.First isNot Nothing Then
-                Assert.AreEqual(value, genericList.First.Value, "Head node value is incorrect.")
-            End If
+            Assert.AreEqual(1, list.Count, "The count of nodes in the list is incorrect.")
+            Assert.AreEqual(42, list.ItemAt(0), "The value of the node is incorrect.")
         End Sub
     End Class
 End Namespace
