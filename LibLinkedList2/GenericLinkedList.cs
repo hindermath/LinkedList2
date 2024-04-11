@@ -3,7 +3,7 @@
 // Creator: Thorsten Hindermann
 // Created: 2024-04-10
 // Modified: 2024-04-10
-//#define PUBLICNODE
+#define PUBLICNODE
 namespace LibLinkedList2;
 #if PUBLICNODE
 /// <summary>
