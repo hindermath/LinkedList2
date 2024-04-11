@@ -14,7 +14,7 @@ Namespace LibLinkedList2TestVB
             REM Act
             list.AddNode(value)
             REM Assert
-            Assert.AreEqual(value, list.Head.Value)
+            Assert.AreEqual(value, list.First.Value)
         End Sub
         <TestMethod>
         <DataRow(-1, 2, +3)>
@@ -28,9 +28,9 @@ Namespace LibLinkedList2TestVB
             list.AddNode(value2)
             list.AddNode(value3)
             REM Assert
-            Assert.AreEqual(value1, list.Head.Value)
-            Assert.AreEqual(value2, list.Head.Next.Value)
-            Assert.AreEqual(value3, list.Head.Next.Next.Value)
+            Assert.AreEqual(value1, list.First.Value)
+            Assert.AreEqual(value2, list.First.Next.Value)
+            Assert.AreEqual(value3, list.First.Next.Next.Value)
         End Sub
     End Class
 

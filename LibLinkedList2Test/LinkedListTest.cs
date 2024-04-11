@@ -16,7 +16,7 @@ public class IntegerLinkedListTest
         // Act
         list.AddNode(value);
         // Assert
-        if (list.Head != null) Assert.AreEqual(value, list.Head.Value);
+        if (list.First != null) Assert.AreEqual(value, list.First.Value);
     }
     [TestMethod]
     [DataRow(-1, 2, +3)]
@@ -31,11 +31,11 @@ public class IntegerLinkedListTest
         list.AddNode(value2);
         list.AddNode(value3);
         // Assert
-        if (list.Head != null)
+        if (list.First != null)
         {
-            Assert.AreEqual(value1, list.Head.Value);
-            Assert.AreEqual(value2, list.Head.Next.Value);
-            Assert.AreEqual(value3, list.Head.Next.Next.Value);
+            Assert.AreEqual(value1, list.First.Value);
+            Assert.AreEqual(value2, list.First.Next.Value);
+            Assert.AreEqual(value3, list.First.Next.Next.Value);
         }
     }
 

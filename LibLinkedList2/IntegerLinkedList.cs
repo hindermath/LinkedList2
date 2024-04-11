@@ -14,25 +14,25 @@ public class Node
 
 public class IntegerLinkedList
 {
-    public Node? Head { get; private set; }
+    public Node? First { get; private set; }
     public int Count { get; private set; }
 
     public IntegerLinkedList()
     {
-        Head = null;
+        First = null;
         Count = 0;
     }
     public void AddNode(int value)
     {
         Node newNode = new Node(value);
 
-        if (Head == null)
+        if (First == null)
         {
-            Head = newNode;
+            First = newNode;
         }
         else
         {
-            Node current = Head;
+            Node current = First;
             while (current.Next != null)
             {
                 current = current.Next;

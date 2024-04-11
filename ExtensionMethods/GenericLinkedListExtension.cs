@@ -34,7 +34,7 @@ public static class GenericLinkedListExtension
         writer.WriteLine("Start of LinkedList print out:");
 
         var counter = 0;
-        var current = list.Head;
+        var current = list.First;
         while (current != null)
         {
             writer.WriteLine($"Node at index {counter} has value of type {current.Value.GetType()} and value: {current.Value}");
