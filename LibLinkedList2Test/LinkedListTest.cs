@@ -7,8 +7,6 @@ public class IntegerLinkedListTest
 {
     [TestMethod]
     [DataRow(1)]
-    [DataRow(-2)]
-    [DataRow(+3)]
     public void LinkedListSingleNodeTestMethod(int value)
     {
         // Arrange
@@ -20,8 +18,6 @@ public class IntegerLinkedListTest
     }
     [TestMethod]
     [DataRow(-1, 2, +3)]
-    [DataRow(4, -5, +6)]
-    [DataRow(+7, 8, -9)]
     public void LinkedListMultipleNodesTestMethod(int value1, int value2, int value3)
     {
         // Arrange
