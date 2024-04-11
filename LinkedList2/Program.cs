@@ -21,22 +21,20 @@ genericListInt.AddNode(1);
 genericListInt.AddNode(2);
 genericListInt.AddNode(3);
 genericListInt.PrintList(Console.Out);
-//PrintGenericList<int>(genericListInt, Console.Out);
-//PrintGenericList<int>(genericListInt, fileWriter);
-//PrintGenericList<int>(genericListInt, stringWriter);
+genericListInt.PrintList(fileWriter);
+genericListInt.PrintList(stringWriter);
 var listAsString = stringWriter.ToString();
-//PrintGenericList<int>(genericListInt, debugWriter);
+genericListInt.PrintList(debugWriter);
 var debugOutput = debugWriter.ToString();
 
 genericListStr.AddNode("one");
 genericListStr.AddNode("two");
 genericListStr.AddNode("three");
 genericListStr.PrintList(Console.Out);
-//PrintGenericList<string>(genericListStr, Console.Out);
-//PrintGenericList<string>(genericListStr, fileWriter);
-//PrintGenericList<string>(genericListStr, stringWriter);
+genericListStr.PrintList(fileWriter);
+genericListStr.PrintList(stringWriter);
 listAsString = stringWriter.ToString();
-//PrintGenericList<string>(genericListStr, debugWriter);
+genericListStr.PrintList(debugWriter);
 debugOutput = debugWriter.ToString();
 
 return;
