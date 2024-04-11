@@ -15,7 +15,7 @@ public static class StringExtension
 
 public static class GenericLinkedListExtension
 {
-    public static void Print<T>(this GenericLinkedList<T> list, TextWriter writer)
+    public static void PrintList<T>(this GenericLinkedList<T> list, TextWriter writer)
     {
         writer.WriteLine("Start of LinkedList print out:");
 
@@ -37,7 +37,7 @@ public static class GenericLinkedListExtension
         writer.WriteLine($"End of LinkedList printout. The linked list has {list.Count} nodes in total.");
     }
 
-    public static void Print(this IntegerLinkedList list, TextWriter writer)
+    public static void PrintList(this IntegerLinkedList list, TextWriter writer)
     {
         writer.WriteLine("Start of LinkedList print out:");
 
