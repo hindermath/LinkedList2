@@ -101,27 +101,26 @@ public class GenericLinkedListTest
     }
 
     [TestMethod]
-    [ExpectedException(typeof(ArgumentOutOfRangeException))]
     public void CannotGetItemNegativIndex()
     {
         // Arrange
         GenericLinkedList<int> genericList = new GenericLinkedList<int>();
         // Act
-        genericList.ItemAt(-1);
+        // Assert
+        Assert.ThrowsException<ArgumentOutOfRangeException>(() => genericList.ItemAt(-1));
     }
 
     [TestMethod]
-    [ExpectedException(typeof(ArgumentOutOfRangeException))]
     public void CannotGetItemOfEmptyList()
     {
         // Arrange
         GenericLinkedList<int> genericList = new GenericLinkedList<int>();
         // Act
-        genericList.ItemAt(0);
+        // Assert
+        Assert.ThrowsException<ArgumentOutOfRangeException>(() => genericList.ItemAt(0));
     }
 
     [TestMethod]
-    [ExpectedException(typeof(ArgumentOutOfRangeException))]
     public void CannotGetItemIndexOutOfBounds()
     {
         // Arrange
@@ -129,6 +128,6 @@ public class GenericLinkedListTest
         // Act
         genericList.AddNode(42);
         // Assert
-        genericList.ItemAt(1);
+        Assert.ThrowsException<ArgumentOutOfRangeException>(() => genericList.ItemAt(1));
     }
 }
