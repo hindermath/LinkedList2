@@ -37,23 +37,3 @@ genericListStr.PrintList(stringWriter);
 listAsString = stringWriter.ToString();
 genericListStr.PrintList(debugWriter);
 debugOutput = debugWriter.ToString();
-
-return;
-
-
-void PrintList(IntegerLinkedList list, TextWriter writer)
-{
-    writer.WriteLine("Start of LinkedList print out:");
-
-    var counter = 0;
-    var current = list.First;
-    while (current != null)
-    {
-        writer.WriteLine($"Node at index {counter} has value of type {current.Value.GetType()} and value: {current.Value}");
-        current = current.Next;
-        counter++;
-    }
-
-    writer.WriteLine($"End of LinkedList printout. The linked list has {list.Count} nodes in total.");
-
-}
