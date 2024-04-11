@@ -1,5 +1,5 @@
-Imports System
 Imports LibLinkedList2
+Imports ExtensionMethods
 
 Module Program
     Sub Main(args As String())
@@ -10,16 +10,16 @@ Module Program
         list.AddNode(1)
         list.AddNode(2)
         list.AddNode(3)
-        REM list.PrintList()
+        list.PrintList(Console.Out)
 
         genericListInt.AddNode(1)
         genericListInt.AddNode(2)
         genericListInt.AddNode(3)
-        REM genericListInt.PrintList()
+        genericListInt.PrintList(Console.Out)
 
         genericListStr.AddNode("one")
         genericListStr.AddNode("two")
         genericListStr.AddNode("three")
-        REM genericListStr.PrintList()
+        genericListStr.PrintList(Console.Out)
     End Sub
 End Module

@@ -15,7 +15,8 @@ var debugWriter = TextWriter.Synchronized(Debugger.IsAttached ? new StringWriter
 list.AddNode(1);
 list.AddNode(2);
 list.AddNode(3);
-PrintList(list, Console.Out);
+list.PrintList(Console.Out);
+list.PrintList(fileWriter);
 
 genericListInt.AddNode(1);
 genericListInt.AddNode(2);
