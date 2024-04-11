@@ -58,121 +58,77 @@ public class IntegerLinkedListTest
 public class GenericLinkedListTest
 {
     [TestMethod]
-    [DataRow(1)]
-    [DataRow(-2)]
-    [DataRow(3)]
-    [DataRow(0)]
-    public void GenLinkedListIntSingleNodeTestMethod(int value)
-    {
-        SingleNodeTestMethod<int>(value);
-    }
-    [TestMethod]
-    [DataRow(-1, 2, 3)]
-    [DataRow(4, -5, 6)]
-    [DataRow(7, 8, -9)]
-    public void GenLinkedListIntMultipleNodesTestMethod(int value1, int value2, int value3)
-    {
-        MultipleNodesTestMethod<int>(value1, value2, value3);
-    }
-
-    [TestMethod]
-    [DataRow(new double[] {1, 2.0, 3.4})]
-    [DataRow(new double[] {-4, 5, -6.1})]
-    [DataRow(new double[] {7.0, -8.97, 9})]
-    public void GenLinkedListDblArrayMultipleNodesTestMethod(double[] values)
-    {
-        ArrayMultipleNodesTestMethod<double>(values);
-    }
-
-    [TestMethod]
-    [DataRow("one")]
-    [DataRow("two")]
-    [DataRow("three")]
-    [DataRow("")]
-    public void GenLinkedListStringMultipleNodesTestMethod(string value)
-    {
-        SingleNodeTestMethod<string>(value);
-    }
-
-    [TestMethod]
-    [DataRow("one")]
-    public void GenLinkedListStringMultipleNodesCountTestMethod(string value)
+    public void CountOfEmptyList()
     {
         // Arrange
-        GenericLinkedList<string> genericList = new GenericLinkedList<string>();
+        GenericLinkedList<int> genericList = new GenericLinkedList<int>();
         // Act
-        genericList.AddNode(value);
+        // Assert
+        Assert.AreEqual(0, genericList.Count, "The count of nodes in the list is incorrect.");
+    }
+
+    [TestMethod]
+    public void AddItem()
+    {
+        // Arrange
+        GenericLinkedList<int> genericList = new GenericLinkedList<int>();
+        // Act
+        genericList.AddNode(42);
         // Assert
         Assert.AreEqual(1, genericList.Count, "The count of nodes in the list is incorrect.");
+        Assert.AreEqual(42, genericList.ItemAt(0), "The value of the node is incorrect.");
     }
 
     [TestMethod]
-    [DataRow("one", "two", "three")]
-    [DataRow("four", "five", "six")]
-    [DataRow("seven", "eight", "nine")]
-    [DataRow("", "", "")]
-    [DataRow("one", "", "nine")]
-    public void GenLinkedListStringMultipleNodesTestMethod(string value1, string value2, string value3)
-    {
-        MultipleNodesTestMethod<string>(value1, value2, value3);
-    }
-    [TestMethod]
-    [DataRow(new string[] {"one", "two", "three"})]
-    [DataRow(new string[] {"four", "five", "six"})]
-    [DataRow(new string[] {"seven", "eight", "nine"})]
-    [DataRow(new string[] {"", "", ""})]
-    [DataRow(new string[] {"one", "", "nine"})]
-    public void GenLinkedListStringArrayMultipleNodesTestMethod(string[] values)
-    {
-        ArrayMultipleNodesTestMethod<string>(values);
-    }
-
-    private void SingleNodeTestMethod<T>(T value)
+    [DataRow(new int[] {42, 0815, 4711}, 3)]
+    public void AddMultipleItems(IEnumerable<int> values, int expectedCount)
     {
         // Arrange
-        GenericLinkedList<T> genericList = new GenericLinkedList<T>();
+        GenericLinkedList<int> genericList = new GenericLinkedList<int>();
         // Act
-        genericList.AddNode(value);
-        // Assert
-        Assert.IsNotNull(genericList.First, "Head node is null.");
-        if (genericList.First != null) Assert.AreEqual(value, genericList.First.Value, "Head node value is incorrect.");
-    }
-    private void MultipleNodesTestMethod<T>(T value1, T value2, T value3)
-    {
-        // Arrange
-        GenericLinkedList<T> genericList = new GenericLinkedList<T>();
-        // Act
-        genericList.AddNode(value1);
-        genericList.AddNode(value2);
-        genericList.AddNode(value3);
-        // Assert
-        Assert.IsNotNull(genericList.First, "Head node is null.");
-        if (genericList.First != null)
-        {
-            Assert.AreEqual(value1, genericList.First.Value, "Head node value is incorrect.");
-            Assert.AreEqual(value2, genericList.First.Next.Value, "Second node value is incorrect.");
-            Assert.AreEqual(value3, genericList.First.Next.Next.Value, "Third node value is incorrect.");
-        }
-    }
-    private void ArrayMultipleNodesTestMethod<T>(T[] values)
-    {
-        // Arrange
-        GenericLinkedList<T> genericList = new GenericLinkedList<T>();
-        // Act
-        foreach (T value in values)
+        foreach (var value in values)
         {
             genericList.AddNode(value);
         }
         // Assert
-        Assert.IsNotNull(genericList.First, "Head node is null.");
-        if (genericList.First != null)
+        Assert.AreEqual(expectedCount, genericList.Count, "The count of nodes in the list is incorrect.");
+        int index = 0;
+        foreach (var value in values)
         {
-            Node<T> current = genericList.First;
-            foreach (var value in values)
-            {
-                Assert.AreEqual(value, current.Value, $"Node value {value} is incorrect.");
-                current = current.Next;
-            }
+            Assert.AreEqual(value, genericList.ItemAt(index), $"The value {value} of node {index} is incorrect.");
+            index++;
         }
+    }
+
+    [TestMethod]
+    [ExpectedException(typeof(ArgumentOutOfRangeException))]
+    public void CannotGetItemNegativIndex()
+    {
+        // Arrange
+        GenericLinkedList<int> genericList = new GenericLinkedList<int>();
+        // Act
+        genericList.ItemAt(-1);
+    }
+
+    [TestMethod]
+    [ExpectedException(typeof(ArgumentOutOfRangeException))]
+    public void CannotGetItemOfEmptyList()
+    {
+        // Arrange
+        GenericLinkedList<int> genericList = new GenericLinkedList<int>();
+        // Act
+        genericList.ItemAt(0);
+    }
+
+    [TestMethod]
+    [ExpectedException(typeof(ArgumentOutOfRangeException))]
+    public void CannotGetItemIndexOutOfBounds()
+    {
+        // Arrange
+        GenericLinkedList<int> genericList = new GenericLinkedList<int>();
+        // Act
+        genericList.AddNode(42);
+        // Assert
+        genericList.ItemAt(1);
     }
 }
