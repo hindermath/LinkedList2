@@ -11,7 +11,7 @@ public static class GenericLinkedListExtension
         for (var counter = 0; counter < list.Count; counter++)
         {
             var node = list.ItemAt(counter);
-            writer.WriteLine($"Node at index {counter} has value of type {node.GetType()} and the value: {node}");
+            writer.WriteLine($"Node at index {counter} has value of type {node?.GetType()} and the value: {node}");
         }
 
         writer.WriteLine($"End of LinkedList printout. The linked list has {list.Count} nodes in total.");
