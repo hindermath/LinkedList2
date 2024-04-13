@@ -37,7 +37,7 @@ public static class GenericLinkedListExtension
         var current = list.First;
         while (current != null)
         {
-            writer.WriteLine($"Node at index {counter} has value of type {current.Value.GetType()} and value: {current.Value}");
+            writer.WriteLine($"Node at index {counter} has value of type {current.Value.GetType()} and the value: {current.Value}");
             current = current.Next;
             counter++;
         }
