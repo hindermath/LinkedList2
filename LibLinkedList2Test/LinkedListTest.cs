@@ -34,7 +34,7 @@ public class GenericLinkedListTest
     }
 
     [TestMethod]
-    [DataRow(new int[] {42, 0815, 4711}, 3)]
+    [DataRow(new[] {42, 0815, 4711}, 3)]
     public void AddMultipleItems(IEnumerable<int> values, int expectedCount)
     {
         // Arrange
