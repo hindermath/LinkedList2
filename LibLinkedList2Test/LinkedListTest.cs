@@ -15,7 +15,7 @@ public class GenericLinkedListTest
     public void CountOfEmptyList()
     {
         // Arrange
-        GenericLinkedList<int> genericList = new GenericLinkedList<int>();
+        var genericList = new GenericLinkedList<int>();
         // Act
         // Assert
         Assert.AreEqual(0, genericList.Count, "The count of nodes in the list is incorrect.");
@@ -25,7 +25,7 @@ public class GenericLinkedListTest
     public void AddItem()
     {
         // Arrange
-        GenericLinkedList<int> genericList = new GenericLinkedList<int>();
+        var genericList = new GenericLinkedList<int>();
         // Act
         genericList.AddNode(42);
         // Assert
@@ -38,7 +38,7 @@ public class GenericLinkedListTest
     public void AddMultipleItems(IEnumerable<int> values, int expectedCount)
     {
         // Arrange
-        GenericLinkedList<int> genericList = new GenericLinkedList<int>();
+        var genericList = new GenericLinkedList<int>();
         // Act
         foreach (var value in values)
         {
@@ -46,7 +46,7 @@ public class GenericLinkedListTest
         }
         // Assert
         Assert.AreEqual(expectedCount, genericList.Count, "The count of nodes in the list is incorrect.");
-        int index = 0;
+        var index = 0;
         foreach (var value in values)
         {
             Assert.AreEqual(value, genericList.ItemAt(index), $"The value {value} of node {index} is incorrect.");
@@ -58,7 +58,7 @@ public class GenericLinkedListTest
     public void CannotGetItemNegativeIndex()
     {
         // Arrange
-        GenericLinkedList<int> genericList = new GenericLinkedList<int>();
+        var genericList = new GenericLinkedList<int>();
         // Act
         // Assert
         Assert.ThrowsException<ArgumentOutOfRangeException>(() => genericList.ItemAt(-1));
@@ -68,7 +68,7 @@ public class GenericLinkedListTest
     public void CannotGetItemOfEmptyList()
     {
         // Arrange
-        GenericLinkedList<int> genericList = new GenericLinkedList<int>();
+        var genericList = new GenericLinkedList<int>();
         // Act
         // Assert
         Assert.ThrowsException<ArgumentOutOfRangeException>(() => genericList.ItemAt(0));
@@ -78,7 +78,7 @@ public class GenericLinkedListTest
     public void CannotGetItemIndexOutOfBounds()
     {
         // Arrange
-        GenericLinkedList<int> genericList = new GenericLinkedList<int>();
+        var genericList = new GenericLinkedList<int>();
         // Act
         genericList.AddNode(42);
         // Assert
