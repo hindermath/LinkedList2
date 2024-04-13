@@ -11,11 +11,6 @@ public class IntegerLinkedList
     public Node? First { get; private set; }
     public int Count { get; private set; }
 
-    public IntegerLinkedList()
-    {
-        First = null;
-        Count = 0;
-    }
     public void AddNode(int value)
     {
         var newNode = new Node(value);
