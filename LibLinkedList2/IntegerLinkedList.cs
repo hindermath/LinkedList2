@@ -26,7 +26,7 @@ public class IntegerLinkedList
         }
         else
         {
-            Node current = First;
+            var current = First;
             while (current.Next != null)
             {
                 current = current.Next;
