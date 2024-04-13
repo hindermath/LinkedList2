@@ -18,7 +18,7 @@ public class IntegerLinkedList
     }
     public void AddNode(int value)
     {
-        Node newNode = new Node(value);
+        var newNode = new Node(value);
 
         if (First == null)
         {
