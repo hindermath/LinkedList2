@@ -172,7 +172,6 @@ public class GenericLinkedList<T>
     /// <summary>
     /// Represents a node in the generic linked list.
     /// </summary>
-    /// <typeparam name="T">The type of the value of the node.</typeparam>
     private sealed class Node
     {
         internal Node(T value)
