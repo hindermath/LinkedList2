@@ -25,6 +25,7 @@ Module Program
         genericListInt.PrintList(fileWriter)
         genericListInt.PrintList(stringWriter)
         DIM listAsString AS String = stringWriter.ToString()
+        Console.WriteLine(listAsString)
 
         genericListStr.AddNode("one")
         genericListStr.AddNode("two")
@@ -33,5 +34,6 @@ Module Program
         genericListStr.PrintList(fileWriter)
         genericListStr.PrintList(stringWriter)
         listAsString = stringWriter.ToString()
+        Console.WriteLine(listAsString)
     End Sub
 End Module
