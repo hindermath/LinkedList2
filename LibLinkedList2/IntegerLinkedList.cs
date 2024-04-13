@@ -1,15 +1,9 @@
 ﻿namespace LibLinkedList2;
 
-public class Node
+public class Node(int value)
 {
-    public int Value { get; }
+    public int Value { get; } = value;
     public Node? Next { get; set; }
-
-    public Node(int value)
-    {
-        Value = value;
-        Next = null;
-    }
 }
 
 public class IntegerLinkedList
