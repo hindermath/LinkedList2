@@ -2,7 +2,7 @@ Imports LibLinkedList2
 Imports ExtensionMethods
 
 Module Program
-    Sub Main(args As String())
+    Sub Main()
         DIM list AS IntegerLinkedList = NEW IntegerLinkedList()
         DIM genericListInt AS GenericLinkedList(Of Integer) = NEW GenericLinkedList(Of Integer)()
         DIM genericListStr AS GenericLinkedList(Of String) = NEW GenericLinkedList(Of String)()
