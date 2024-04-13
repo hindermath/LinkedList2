@@ -3,10 +3,7 @@ using LibLinkedList2;
 
 namespace LibLinkedList2Test;
 [TestClass]
-public class IntegerLinkedListTest
-{
-
-}
+public class IntegerLinkedListTest;
 
 [TestClass]
 public class GenericLinkedListTest
