@@ -7,8 +7,8 @@ Module Program
         DIM genericListInt = NEW GenericLinkedList(Of Integer)()
         DIM genericListStr = NEW GenericLinkedList(Of String)()
 
-        DIM fileWriter = NEW System.IO.StreamWriter("output.txt")
-        Dim stringWriter = New System.IO.StringWriter()
+        DIM fileWriter = NEW IO.StreamWriter("output.txt")
+        Dim stringWriter = New IO.StringWriter()
 
 
         list.AddNode(1)

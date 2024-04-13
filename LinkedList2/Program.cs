@@ -8,8 +8,8 @@ var list = new IntegerLinkedList();
 var genericListInt = new GenericLinkedList<int>();
 var genericListStr = new GenericLinkedList<string>();
 
-var fileWriter = new System.IO.StreamWriter("output.txt");
-var stringWriter = new System.IO.StringWriter();
+var fileWriter = new StreamWriter("output.txt");
+var stringWriter = new StringWriter();
 var debugWriter = TextWriter.Synchronized(Debugger.IsAttached ? new StringWriter() : new StreamWriter(Stream.Null));
 
 list.AddNode(1);
