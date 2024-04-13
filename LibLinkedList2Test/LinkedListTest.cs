@@ -97,7 +97,7 @@ public class GenericLinkedListTest
     }
 
     [TestMethod]
-    public void CannotGetItemNegativIndex()
+    public void CannotGetItemNegativeIndex()
     {
         // Arrange
         GenericLinkedList<int> genericList = new GenericLinkedList<int>();
