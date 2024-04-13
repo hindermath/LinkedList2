@@ -4,6 +4,7 @@
 // Created: 2024-04-10
 // Modified: 2024-04-10
 //#define PUBLICNODE
+//#define O_N
 namespace LibLinkedList2;
 #if PUBLICNODE
 /// <summary>
@@ -76,9 +77,10 @@ public class GenericLinkedList<T>
         Last = null;
         Count = 0;
     }
-
+    #if O_N
     /// <summary>
     /// Adds a new node with the specified value to the end of the linked list.
+    /// This operation has a time complexity of O(n).
     /// </summary>
     /// <typeparam name="T">The type of the value of the node.</typeparam>
     /// <param name="value">The value of the node to be added.</param>
@@ -105,14 +107,14 @@ public class GenericLinkedList<T>
         }
         Count++;
     }
-
+    #else
     /// <summary>
     /// Adds a new node with the specified value to the end of the linked list.
     /// This operation has a time complexity of O(1).
     /// </summary>
     /// <typeparam name="T">The type of the value of the node.</typeparam>
     /// <param name="value">The value of the node to be added.</param>
-    public void AddNodeO1(T value)
+    public void AddNode(T value)
     {
         #if PUBLICNODE
         var newNode = new GenericLinkedListNode<T>(value);
@@ -132,7 +134,7 @@ public class GenericLinkedList<T>
         }
         Count++;
     }
-
+    #endif
     /// <summary>
     /// Retrieves the element at the specified index in the generic linked list.
     /// </summary>
