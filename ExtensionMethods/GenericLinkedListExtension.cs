@@ -8,7 +8,7 @@ public static class GenericLinkedListExtension
         writer.WriteLine("Start of LinkedList print out:");
 
 
-        for (int counter = 0; counter < list.Count; counter++)
+        for (var counter = 0; counter < list.Count; counter++)
         {
             var node = list.ItemAt(counter);
             writer.WriteLine($"Node at index {counter} has value of type {node.GetType()} and the value: {node}");

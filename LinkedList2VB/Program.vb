@@ -3,12 +3,12 @@ Imports ExtensionMethods
 
 Module Program
     Sub Main()
-        DIM list AS IntegerLinkedList = NEW IntegerLinkedList()
-        DIM genericListInt AS GenericLinkedList(Of Integer) = NEW GenericLinkedList(Of Integer)()
-        DIM genericListStr AS GenericLinkedList(Of String) = NEW GenericLinkedList(Of String)()
+        DIM list = NEW IntegerLinkedList()
+        DIM genericListInt = NEW GenericLinkedList(Of Integer)()
+        DIM genericListStr = NEW GenericLinkedList(Of String)()
 
-        DIM fileWriter AS System.Io.StreamWriter = NEW System.IO.StreamWriter("output.txt")
-        Dim stringWriter As System.IO.StringWriter = New System.IO.StringWriter()
+        DIM fileWriter = NEW System.IO.StreamWriter("output.txt")
+        Dim stringWriter = New System.IO.StringWriter()
 
 
         list.AddNode(1)

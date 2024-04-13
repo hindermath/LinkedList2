@@ -4,9 +4,9 @@ using System.Diagnostics;
 using LibLinkedList2;
 using ExtensionMethods;
 
-IntegerLinkedList list = new IntegerLinkedList();
-GenericLinkedList<int> genericListInt = new GenericLinkedList<int>();
-GenericLinkedList<string> genericListStr = new GenericLinkedList<string>();
+var list = new IntegerLinkedList();
+var genericListInt = new GenericLinkedList<int>();
+var genericListStr = new GenericLinkedList<string>();
 
 var fileWriter = new System.IO.StreamWriter("output.txt");
 var stringWriter = new System.IO.StringWriter();
@@ -25,8 +25,10 @@ genericListInt.PrintList(Console.Out);
 genericListInt.PrintList(fileWriter);
 genericListInt.PrintList(stringWriter);
 var listAsString = stringWriter.ToString();
+Console.WriteLine(listAsString);
 genericListInt.PrintList(debugWriter);
 var debugOutput = debugWriter.ToString();
+Console.WriteLine(debugOutput);
 
 genericListStr.AddNode("one");
 genericListStr.AddNode("two");
@@ -35,5 +37,7 @@ genericListStr.PrintList(Console.Out);
 genericListStr.PrintList(fileWriter);
 genericListStr.PrintList(stringWriter);
 listAsString = stringWriter.ToString();
+Console.WriteLine(listAsString);
 genericListStr.PrintList(debugWriter);
 debugOutput = debugWriter.ToString();
+Console.WriteLine(debugOutput);

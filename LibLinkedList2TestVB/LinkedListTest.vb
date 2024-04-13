@@ -10,7 +10,7 @@ Namespace LibLinkedList2TestVB
         <DataRow(+3)>
         Sub LinkedListSingleNodeTestSub(value As Integer)
             REM Arrange
-            DIM list AS IntegerLinkedList = NEW IntegerLinkedList()
+            DIM list = NEW IntegerLinkedList()
             REM Act
             list.AddNode(value)
             REM Assert
@@ -22,7 +22,7 @@ Namespace LibLinkedList2TestVB
         <DataRow(+7, 8, -9)>
         Sub LinkedListMultipleNodesTestSub(value1 As Integer, value2 As Integer, value3 As Integer)
             REM Arrange
-            DIM list AS IntegerLinkedList = NEW IntegerLinkedList()
+            DIM list = NEW IntegerLinkedList()
             REM Act
             list.AddNode(value1)
             list.AddNode(value2)
@@ -39,7 +39,7 @@ Namespace LibLinkedList2TestVB
         <TestMethod>
         Sub CountOfEmptyList()
             REM Arrange
-            DIM list AS GenericLinkedList(Of Integer) = NEW GenericLinkedList(Of Integer)()
+            DIM list = NEW GenericLinkedList(Of Integer)()
             REM Act
             REM Assert
             Assert.AreEqual(0, list.Count, "The count of nodes in the list is incorrect.")
@@ -47,7 +47,7 @@ Namespace LibLinkedList2TestVB
         <TestMethod>
         Sub AddItem()
             REM Arrange
-            DIM list AS GenericLinkedList(Of Integer) = NEW GenericLinkedList(Of Integer)()
+            DIM list = NEW GenericLinkedList(Of Integer)()
             REM Act
             list.AddNode(42)
             REM Assert
