@@ -33,23 +33,24 @@ public class GenericLinkedListTest
     [TestMethod]
     [DataRow(new[] {42, 0815, 4711}, 3)]
     public void AddMultipleItems(IEnumerable<int> values, int expectedCount)
+{
+    // Arrange
+    var genericList = new GenericLinkedList<int>();
+    // Act
+    foreach (var value in values)
     {
-        // Arrange
-        var genericList = new GenericLinkedList<int>();
-        // Act
-        foreach (var value in values)
-        {
-            genericList.AddNode(value);
-        }
-        // Assert
-        Assert.AreEqual(expectedCount, genericList.Count, "The count of nodes in the list is incorrect.");
-        var index = 0;
-        foreach (var value in values)
-        {
-            Assert.AreEqual(value, genericList.ItemAt(index), $"The value {value} of node {index} is incorrect.");
-            index++;
-        }
+        genericList.AddNode(value);
     }
+
+    // Assert
+    var nodeCount = 0;
+    foreach (var value in values)
+    {
+        Assert.AreEqual(value, genericList.ItemAt(nodeCount), $"The value {value} of node {nodeCount} is incorrect.");
+        nodeCount++;
+    }
+    Assert.AreEqual(expectedCount, nodeCount, "The count of nodes in the list is incorrect.");
+}
 
     [TestMethod]
     public void CannotGetItemNegativeIndex()
