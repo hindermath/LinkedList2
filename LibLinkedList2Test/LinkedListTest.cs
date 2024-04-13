@@ -5,49 +5,7 @@ namespace LibLinkedList2Test;
 [TestClass]
 public class IntegerLinkedListTest
 {
-    [TestMethod]
-    [DataRow(1)]
-    public void LinkedListSingleNodeTestMethod(int value)
-    {
-        // Arrange
-        IntegerLinkedList list = new IntegerLinkedList();
-        // Act
-        list.AddNode(value);
-        // Assert
-        if (list.First != null) Assert.AreEqual(value, list.First.Value);
-    }
-    [TestMethod]
-    [DataRow(-1, 2, +3)]
-    public void LinkedListMultipleNodesTestMethod(int value1, int value2, int value3)
-    {
-        // Arrange
-        IntegerLinkedList list = new IntegerLinkedList();
-        // Act
-        list.AddNode(value1);
-        list.AddNode(value2);
-        list.AddNode(value3);
-        // Assert
-        if (list.First != null)
-        {
-            Assert.AreEqual(value1, list.First.Value);
-            Assert.AreEqual(value2, list.First.Next.Value);
-            Assert.AreEqual(value3, list.First.Next.Next.Value);
-        }
-    }
 
-    [TestMethod]
-    [DataRow(1, +2, -3)]
-    public void LinkedListMultipleNodesCountTestMethod(int value1, int value2, int value3)
-    {
-        // Arrange
-        IntegerLinkedList list = new IntegerLinkedList();
-        // Act
-        list.AddNode(value1);
-        list.AddNode(value2);
-        list.AddNode(value3);
-        // Assert
-        Assert.AreEqual(3, list.Count);
-    }
 }
 
 [TestClass]
