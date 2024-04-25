@@ -61,7 +61,7 @@ public class IntegerLinkedList
     /// </summary>
     /// <param name="index">The zero-based index of the value to retrieve.</param>
     /// <returns>The value at the specified index.</returns>
-    public int ImtemAt(int index)
+    public int ItemAt(int index)
     {
         if (index < 0)
         {
