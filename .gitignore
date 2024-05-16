@@ -4,6 +4,9 @@ obj/
 riderModule.iml
 /_ReSharper.Caches/
 
+# Von Thorsten Hindermann manuell eingetragen
+.idea/
+
 # Created by https://www.toptal.com/developers/gitignore/api/csharp,visualbasic,visualstudio,visualstudiocode,dotnetcore
 # Edit at https://www.toptal.com/developers/gitignore?templates=csharp,visualbasic,visualstudio,visualstudiocode,dotnetcore
 
